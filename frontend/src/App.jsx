@@ -1,33 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ArtisansList from './components/artisans/ArtisansList'
+import ArtisansListItem from './components/artisans/ArtisansListtem'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  // on prépare l'état local (la variable) qui va stocker les composant
+  const [artisans, setArtisans] = useState([])
+
+  useEffect(() => { 
+    // on récupère les données depuis l'API
+    const getData = async () => {
+      const response = await fetch('http://localhost:1337/api/artisans?populate=*')
+      const responseData = await response.json()
+      setArtisans(responseData.data)
+
+    }
+    getData()
+
+  }, [])
+  
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ArtisansList artisans = {artisans} />
     </>
   )
 }
