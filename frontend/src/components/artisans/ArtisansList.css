@@ -3,11 +3,26 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: calc(25% - 20px); /* Ajustez la largeur pour afficher 4 cartes par ligne */
     max-width: calc(25% - 20px); /* Ajustez la largeur maximale pour 4 cartes par ligne */
-    height: 320px;
+    height: 400px;
     background-color: #0077BE;
     color: black;
     padding: 20px 10px;
     margin-bottom: 25px; /* Ajoutez une marge en bas pour espacer les cartes */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card a:hover {
+    text-decoration: none;
+    color: yellow;
 }
 
 .list {

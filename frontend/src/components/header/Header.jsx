@@ -7,6 +7,7 @@ import './Header.css'
         <h2>Menu</h2>
         <nav>
             <a href="/">Accueil</a>
+            <a href="/artisans">Artisans</a>
             <a href="/about">A propos</a>
             <a href="/services">Services</a>
             <a href="/contact">Contact</a>
