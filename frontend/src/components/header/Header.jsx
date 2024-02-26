@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../forms/buttons/Button'
 import './Header.css'
 
  function Header() {
@@ -11,8 +12,10 @@ import './Header.css'
             <a href="/about">A propos</a>
             <a href="/services">Services</a>
             <a href="/contact">Contact</a>
-            
         </nav>
+        <a href="/authentication">
+        <Button>Connexion</Button>
+        </a>
     </header>
   )
 }

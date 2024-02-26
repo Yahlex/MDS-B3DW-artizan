@@ -407,6 +407,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -415,7 +416,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     name: Attribute.String;
     description: Attribute.RichText;
     price: Attribute.Decimal;
-    image: Attribute.Media;
+    images: Attribute.Media;
     artisan: Attribute.Relation<
       'api::product.product',
       'manyToOne',
